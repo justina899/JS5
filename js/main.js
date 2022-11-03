@@ -58,17 +58,31 @@ function kurtiP() {
 
 console.log("VIDUTINIAI");
 console.log("1 uzd");
-console.log(pakeltiLaipsniu (5, 3));
+console.log(pakeltiLaipsniu (5, 14));
 function pakeltiLaipsniu(skaicius, laipsnis) {
-    let rezultatas = 0;
-    for (let i = 1; i < laipsnis; i++) {
-        if(i = 1){
-            rezultatas += skaicius;
-        }
-        // if(i > 1){
-        //     rezultatas = rezultatas * skaicius;
-        // }
-        
+    if(laipsnis == 0){
+        return 1;
     }
+
+    let rezultatas = skaicius;
+
+    for (let i = 1; i < laipsnis; i++) {
+            rezultatas *= skaicius;
+    }
+
     return rezultatas;
 }
+
+console.log("2 uzd");
+rezGrazinaIHTML(2, 3, "zuikis");
+console.log("done");
+function rezGrazinaIHTML(sk, laip, htmlId){
+    rez = pakeltiLaipsniu(sk, laip);
+    let HTML = "";
+    HTML += "<p>" + "rezultatas: " + rez.toString() + "</p>";
+    document.getElementById(htmlId).innerHTML = HTML;
+}
+
+console.log("SUNKESNI");
+console.log("1 uzd");
+
